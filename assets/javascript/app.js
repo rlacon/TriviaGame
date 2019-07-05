@@ -1,7 +1,5 @@
-//---------------GAME SETUP---------------//
 
-// A $( document ).ready() block.
-// Need this to start doing jQuery commands
+//---------------GAME SETUP---------------//
 
 $(document).ready(function () {
     console.log("Document Loaded!");
