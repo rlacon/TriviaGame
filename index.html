@@ -17,10 +17,10 @@
 
     <h1>Trivia Game</h1><br>
 
-    <!-- Question #1. -->
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
+                <!-- Question #1. -->
                 <p><strong>1. What color is the sky?</strong></p>
                 <div class="custom-control custom-radio custom-control-inline">
                     <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
@@ -38,10 +38,39 @@
                     <input type="radio" id="customRadioInline4" name="customRadioInline1" class="custom-control-input">
                     <label class="custom-control-label" for="customRadioInline4">Blue</label>
                 </div>
-                <br><br>
-                <button type="button" class="btn btn-primary btn-lg">Submit</button>
             </div>
         </div>
+        <br><br>
+        <div class="row">
+            <div class="col-12 text-center">
+                <!-- Question #2. -->
+                <p><strong>2. What shape is the earth?</strong></p>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadioInline1">Square</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadioInline2">Round</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadioInline3">Triangle</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline4" name="customRadioInline1" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadioInline4">Flat</label>
+                </div>
+                <br><br>
+                <button type="button" id="submit" class="btn btn-primary btn-lg">Submit</button>
+                <br><br><br><br>
+                <div class="scoreCounter">
+                    <p>Your Score:</p>
+                    <p id="total-score-text">0</p>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 
 
