@@ -18,15 +18,28 @@
 
     <h1>Trivia Game</h1>
     <br>
-    <button type="button" id="start" class="btn btn-primary btn-lg">Submit</button>
-
     <div class="container">
-        <div class="questions-text">
-        <div class="answers-text">
-
-
+        <div class="row">
+            <div class="col text-center">
+                <p id="trivia-instructions-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste itaque
+                    provident dolor, incidunt ullam id consequatur ab.</p>
+                <br>
+            </div>
         </div>
-        <!-- <div class="row">
+        <div class="row">
+            <div class="col text-center">
+                <button type="button" id="start" class="btn btn-primary btn-lg">Start</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-auto justify-content-center questions-text"></div>
+        </div>
+    </div>
+
+    <!-- <div class="row">
             <div class="col-12 text-center">
 
                 <p><strong>1. What color is the sky?</strong></p>
@@ -51,15 +64,22 @@
 
 
 
-        <!-- Submit Button (needs to be outside the survey because it's its own function) -->
-        <button type="button" id="submit" class="btn btn-primary btn-lg">Submit</button>
-        <br><br><br><br>
-
-        <!-- Score Counter -->
-        <div class="scoreCounter">
-            <p>Your Score:</p>
-            <p id="total-score-text">0</p>
+    <!-- Submit Button (needs to be outside the survey because it's its own function) -->
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <button type="button" id="submit" class="btn btn-primary btn-lg">Submit</button>
+            </div>
         </div>
+    </div>
+    
+    <br><br><br><br>
+
+    <!-- Score Counter -->
+    <div class="scoreCounter">
+        <p>Your Score:</p>
+        <p id="total-score-text">0</p>
+    </div>
 
     </div>
     </div>

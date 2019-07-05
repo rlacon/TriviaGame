@@ -16,17 +16,17 @@ var surveyQuestions = [
 //---------------GAME SETUP---------------//
 
 // Define all the global variables here that will run the game
-// Always end stuff unside an objet with a comma, instead of semicolon
-// This is called a constructor 
-// We declared methods and properties in this survey object
+// Always end stuff inside an object with a comma, instead of semicolon
+// This is called a constructor
+// Declare methods and properties in this survey object
 var survey = {
     totalScore: 0,
     correctAnswers: 0,
     incorrectAnswers: 0,
     questions: surveyQuestions,
 
-    // Function that puts the questions on the page 
-    // When the page loads, the user will get a message that tells what the survey is about 
+    // Function that puts the questions on the page
+    // When the page loads, the user will get a message that tells what the survey is about
     // When user clicks start button, questions will dynamically appear on the page
     // Loop through the answers and grab them dynamically through the array
     showQuestions: function () {
@@ -48,25 +48,11 @@ var survey = {
 }
 
 //---------------START GAME---------------//
-
+$("#submit").hide();
+$(".scoreCounter").hide();
 $("#start").on("click", function () {
     survey.showQuestions();
+    $("#start").hide();
+    $("#submit").show();
+    $("#trivia-instructions-text").hide();
 });
-
-
-// Tell the computer which choices are correct in each question
-
-// When user clicks submit, run each selection against the correct answers
-
-// If user chose the correct answer, then it's true
-
-    // Add a point to total questions correct counter
-
-// If user chose a wrong answer, it's false
-
-    // Don't add any points
-
-// If user didn't make any selection, it's false
-
-    // Don't add any points
-
