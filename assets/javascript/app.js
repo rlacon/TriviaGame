@@ -5,13 +5,16 @@ var surveyQuestions = [
         answers: ["Red", "Green", "Orange", "Blue"],
         correctAnswer: "Blue"
     },
-
+    {
+        question: "2. What shape is the earth?",
+        answers: ["Square", "Round", "Triangle", "Flat"],
+        correctAnswer: "Round"
+    },
     {
         question: "2. What shape is the earth?",
         answers: ["Square", "Round", "Triangle", "Flat"],
         correctAnswer: "Round"
     }
-
 ];
 //---------------GAME SETUP---------------//
 
@@ -39,13 +42,14 @@ var survey = {
             // "." is how we open the next level and move through all the objects in our array
             $(".questions-text").append("<p><strong>" + survey.questions[i].question + "</strong></p>")
             for (j = 0; j < survey.questions[i].answers.length; j++) {
-                // console.log("Current Question is : " + survey.questions[i]);
-                // console.log("Current Option is : " + survey.questions[i]);
+                var userChoices = survey.questions[i].answers[j];
+                // Step 1) Create parent option div with a unique id 
                 $(".questions-text").append('<div id="option_' + i + '' + j + '"></div>');
-                $(".questions-text").append("<p>" + survey.questions[i].answers[j] + "</p>")
+                // Step 2) Create a p element containg question text
+                $(".questions-text").append("<p>" + userChoices + "</p>")
+                // Step 3) Create radio input and attach to parent div that we created in Step 1. 
                 // We need to insert radio buttons next to each answer in the HTML from our JS document
-
-                var radioBtn = $('<input type="radio" name="rbtnCount" />');
+                var radioBtn = $('<input type="radio" name="' + userChoices + '" id="' + i + '' + j + '"/>');
                 radioBtn.appendTo('#option_' + i + '' + j);
 
                 // <label class="custom-control-label" for="customRadioInline1">Red</label>
@@ -65,4 +69,25 @@ $("#start").on("click", function () {
     $("#start").hide();
     $("#submit").show();
     $("#instructions-text").hide();
+});
+
+$("#submit").on("click", function () {
+    // Submit button has been clicked
+    // Now what?
+    // Go through all the options and determine which one has been selected
+    // Loop through the questions first
+    for (i = 0; i < survey.questions.length; i++) {
+        // Which option was selected for this particular question (i)
+        for (j = 0; j < survey.questions[i].answers.length; j++) {
+            var choice = $('#' + i + '' + j); 
+            if(choice.is(':checked')) 
+                { 
+                    console.log("=======================================");
+                    var answer = choice.attr("name");
+                    console.log("You have selected: " + answer); 
+                    console.log("=======================================");
+                }
+        }
+        
+    }
 });
