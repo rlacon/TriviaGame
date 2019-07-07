@@ -1,19 +1,44 @@
 // Define all the attributes of the survey object that we'll call upon in our functions
 var surveyQuestions = [
     {
-        question: "1. What color is the sky?",
-        answers: ["Red", "Green", "Orange", "Blue"],
-        correctAnswer: "Blue"
+        question: "1.) The design for Pac-Man was originally inspired by a...",
+        answers: ["Cheese wheel", "Pizza", "Pie chart", "Grapefruit"],
+        correctAnswer: "Pizza"
     },
     {
-        question: "2. What shape is the earth?",
-        answers: ["Square", "Round", "Triangle", "Flat"],
-        correctAnswer: "Round"
+        question: "2.) Which Nintendo game did Mario make his first appearance in?",
+        answers: ["Donkey Kong", "Super Mario Bros.", "Balloon Fight", "Duck Hunt"],
+        correctAnswer: "Donkey Kong"
     },
     {
-        question: "3. How many legs do cats have?",
-        answers: ["Two", "Three", "Four", "One"],
-        correctAnswer: "Four"
+        question: "3.) Who is the main protagonist in the \"Legend of Zelda\" series?",
+        answers: ["Ganon", "Link", "Zelda", "Sheik"],
+        correctAnswer: "Link"
+    },
+    {
+        question: "4.) The video game series \"Metal Gear\" debuted on which console?",
+        answers: ["Playstation 1", "NES", "Nintendo 64", "SNES"],
+        correctAnswer: "NES"
+    },
+    {
+        question: "5.) What was the first FPS (first-person shooter) game to exist?",
+        answers: ["Maze Wars", "Doom", "Halo", "Wolfenstein"],
+        correctAnswer: "Maze Wars"
+    },
+    {
+        question: "6.) In the game \"Minecraft,\" this creature is known to explode when you get too close...",
+        answers: ["Bob-omb", "Xploder", "Creeper", "Blasto"],
+        correctAnswer: "Creeper"
+    },
+    {
+        question: "7.) Which of the following video game franchises have sold the most copies in the world?",
+        answers: ["Super Mario series", "Pokemon", "Call of Duty", "Grand Theft Auto"],
+        correctAnswer: "Super Mario series"
+    },
+    {
+        question: "8.) What is the best-selling video game console of all time?",
+        answers: ["Xbox 360", "Playstation 2", "Gameboy", "Nintedo Wii"],
+        correctAnswer: "Playstation 2"
     }
 ];
 //---------------GAME SETUP---------------//
@@ -111,14 +136,13 @@ $("#submit").on("click", function () {
         } else {
             // Do this if answer is incorrect
             console.log("You have answered question " + i + " incorrectly");
-            survey.totalScore--;
         }
     }
 
     // Tally up score for game stats
     console.log(survey.correctAnswers, survey.incorrectAnswers, survey.totalScore);
     // Manipulate HTML to reflect game stats
-    $("#total-score-text").replaceWith(survey.totalScore);
+    $("#total-score-text").replaceWith(survey.totalScore + " / " + survey.questions.length);
     $(".scoreCounter").show();
     $("#reset").show();
     $(".questions-text").hide();
@@ -130,4 +154,3 @@ $("#submit").on("click", function () {
 $('#reset').on('click', function () {
     document.location.reload()
 });
-
