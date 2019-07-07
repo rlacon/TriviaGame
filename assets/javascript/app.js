@@ -31,6 +31,7 @@ var survey = {
     // Need function that generates survey dynamically
     // Loop through the questions, answers, and correctAnswers and grab them through the array
     showSurvey: function () {
+        
         for (i = 0; i < survey.questions.length; i++) {
             console.log(survey.questions[i]);
 
@@ -70,6 +71,7 @@ var survey = {
 
 // Click start button to list questions and choices dynamically
 $("#submit").hide();
+$("#reset").hide();
 $(".scoreCounter").hide();
 $("#start").on("click", function () {
     survey.showSurvey();
@@ -81,22 +83,21 @@ $("#start").on("click", function () {
 //---------------SUBMIT BUTTON---------------//
 
 $("#submit").on("click", function () {
-    $(".questions-text").hide();
-    $("#submit").hide();
     // Submit button has been clicked
     // Now...
     // Go through all the options and determine which radio button has been selected
     // Loop through the questions first (Same exact process before)
     for (i = 0; i < survey.questions.length; i++) {
-        
+
         // Which option was selected for this particular question?
         var userChoice;
         for (j = 0; j < survey.questions[i].answers.length; j++) {
 
             // Create variable for function that recreates id's for "option_" div
+            // (".is" checks the current matched set of elements against a selector, element, or jQuery object and returns true if at least one of these elements matches the given arguments)
             // (".attr" gets the value of an attribute for the first element in the set of matched elements)
             var choice = $("#" + i + j);
-            if (choice.attr(":checked")) {
+            if (choice.is(":checked")) {
                 userChoice = choice.attr("name");
                 console.log("You have selected: " + userChoice);
             }
@@ -106,12 +107,10 @@ $("#submit").on("click", function () {
         // (Need "i" to run through all questions in array to grab correctAnswer and see if elements match)
         if (userChoice == survey.questions[i].correctAnswer) {
             console.log("You have answered question " + i + " correctly!");
-            survey.correctAnswers++;
             survey.totalScore++;
         } else {
             // Do this if answer is incorrect
             console.log("You have answered question " + i + " incorrectly");
-            survey.incorrectAnswers++;
             survey.totalScore--;
         }
     }
@@ -121,4 +120,14 @@ $("#submit").on("click", function () {
     // Manipulate HTML to reflect game stats
     $("#total-score-text").replaceWith(survey.totalScore);
     $(".scoreCounter").show();
+    $("#reset").show();
+    $(".questions-text").hide();
+    $("#submit").hide();
 });
+
+//---------------RESET BUTTON---------------//
+
+$('#reset').on('click', function () {
+    document.location.reload()
+});
+
