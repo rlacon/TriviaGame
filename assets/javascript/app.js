@@ -98,14 +98,14 @@ var survey = {
 
 //---------------TIMER---------------//
 
-// var timeleft = 20;
-// var downloadTimer = setInterval(function(){
-//   document.getElementById("timer-text").innerHTML = timeleft + " seconds remaining";
-//   timeleft -= 1;
-//   if(timeleft <= 0){
-//     $("#submit").click()
-//   }
-// }, 1000);
+var timeleft = 20;
+var downloadTimer = setInterval(function(){
+  document.getElementById("timer-text").innerHTML = timeleft + " seconds remaining";
+  timeleft -= 1;
+  if(timeleft <= 0){
+    $("#submit").click()
+  }
+}, 1000);
 
 
 //---------------START BUTTON---------------//
