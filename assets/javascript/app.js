@@ -16,13 +16,13 @@ var surveyQuestions = [
         correctAnswer: "Link"
     },
     {
-        question: "4.) The video game series \"Metal Gear\" debuted on which console?",
-        answers: ["Playstation 1", "NES", "Nintendo 64", "SNES"],
-        correctAnswer: "NES"
+        question: "4.) What was the first publicly released video game console ever made?",
+        answers: ["Pong", "Atari 2600", "Magnavox Odyssey", "NES"],
+        correctAnswer: "Magnavox Odyssey"
     },
     {
         question: "5.) What was the first FPS (first-person shooter) game to exist?",
-        answers: ["Maze Wars", "Doom", "Halo", "Wolfenstein"],
+        answers: ["Maze Wars", "Doom", "Halo", "Wolfenstein 3D"],
         correctAnswer: "Maze Wars"
     },
     {
@@ -31,9 +31,9 @@ var surveyQuestions = [
         correctAnswer: "Creeper"
     },
     {
-        question: "7.) Which of the following video game franchises have sold the most copies in the world?",
-        answers: ["Super Mario series", "Pokemon", "Call of Duty", "Grand Theft Auto"],
-        correctAnswer: "Super Mario series"
+        question: "7.) Which of these video game franchises have sold the most copies in the world?",
+        answers: ["Super Mario", "Pokemon", "Call of Duty", "Grand Theft Auto"],
+        correctAnswer: "Super Mario"
     },
     {
         question: "8.) What is the best-selling video game console of all time?",
@@ -98,12 +98,13 @@ var survey = {
 
 //---------------TIMER---------------//
 
-var timeleft = 20;
+var timeleft = 30;
 var downloadTimer = setInterval(function(){
   document.getElementById("timer-text").innerHTML = timeleft + " seconds remaining";
   timeleft -= 1;
   if(timeleft <= 0){
     $("#submit").click()
+    clearTimeout(timeleft)
   }
 }, 1000);
 
