@@ -98,15 +98,15 @@ var survey = {
 
 //---------------TIMER---------------//
 
-var timeleft = 30;
-var downloadTimer = setInterval(function(){
-  document.getElementById("timer-text").innerHTML = timeleft + " seconds remaining";
-  timeleft -= 1;
-  if(timeleft <= 0){
-    $("#submit").click()
-    clearTimeout(timeleft)
-  }
-}, 1000);
+// var timeleft = 30;
+// var downloadTimer = setInterval(function(){
+//   document.getElementById("timer-text").innerHTML = timeleft + " seconds remaining";
+//   timeleft -= 1;
+//   if(timeleft <= 0){
+//     $("#submit").click()
+//     clearTimeout(timeleft)
+//   }
+// }, 1000);
 
 
 //---------------START BUTTON---------------//
@@ -118,6 +118,15 @@ $("#reset").hide();
 $(".scoreCounter").hide();
 $("#start").on("click", function () {
     survey.showSurvey();
+    var timeleft = 30;
+    setInterval(function () {
+        document.getElementById("timer-text").innerHTML = timeleft + " seconds remaining";
+        timeleft -= 1;
+        if (timeleft <= 0) {
+            $("#submit").click()
+            clearTimeout(timeleft)
+        }
+    }, 1000);
     $("#start").hide();
     $("#submit").show();
     $("#timer-text").show();
