@@ -117,6 +117,7 @@ $("#timer-text").hide();
 $("#reset").hide();
 $(".scoreCounter").hide();
 $("#start").on("click", function () {
+    $("#timer-text").show();
     survey.showSurvey();
     var timeleft = 30;
     setInterval(function () {
@@ -129,7 +130,6 @@ $("#start").on("click", function () {
     }, 1000);
     $("#start").hide();
     $("#submit").show();
-    $("#timer-text").show();
     $("#instructions-text").hide();
 });
 
